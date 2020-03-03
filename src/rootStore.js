@@ -1,8 +1,13 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import axios from 'axios';
+import axiosMiddleware from 'redux-axios-middleware';
 
 import reducers from './rootReducers';
 
-const enhancer = compose(applyMiddleware(thunk));
+const client = axios.create({
+  baseURL: 'https://www.themealdb.com/api/json/v1/1/'
+});
 
-export default createStore(reducers, enhancer);
+const store = createStore(reducers, applyMiddleware(axiosMiddleware(client)));
+
+export default store;
