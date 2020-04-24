@@ -3,14 +3,10 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo, MaterialCommunityIcons } from '@expo/vector-icons'
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
+import HomeScreen from './src/screens/HomeScreen'
+import CategoriesScreen from './src/screens/CategoriesScreen'
+import BookmarksScreen from './src/screens/Bookmarks'
+import AccountScreen from './src/screens/Account';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,21 +23,21 @@ export default function App() {
         />
         <Tab.Screen
           name="Categories"
-          component={() => <View><Text>Categories</Text></View>}
+          component={CategoriesScreen}
           options={{
             tabBarIcon: () => <Entypo name="book" size={32} />,
           }}
         />
         <Tab.Screen
-          name="bookmarks"
-          component={() => <View><Text>Bookmarks</Text></View> }
+          name="Bookmarks"
+          component={BookmarksScreen}
           options={{
             tabBarIcon: () => <Entypo name="bookmark" size={32} />,
           }}
         />
         <Tab.Screen
           name="Account"
-          component={() => <View><Text>Accounnt</Text></View>}
+          component={AccountScreen}
           options={{
             tabBarIcon: () => <MaterialCommunityIcons name="account" size={32} />,
           }}

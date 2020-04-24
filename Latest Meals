@@ -1,0 +1,17 @@
+Latest Meals
+https://www.themealdb.com/api/json/v1/1/latest.php
+
+10 Randome Meals
+https://www.themealdb.com/api/json/v1/1/randomselection.php
+
+List all meal categories
+https://www.themealdb.com/api/json/v1/1/categories.php
+
+Search meal by name
+https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+
+Filter by Category
+https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+
+Lookup full meal details by id
+https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
